@@ -1,0 +1,23 @@
+:root {
+  --color-background-top: #121214;
+  --color-background-bottom: #e5e5e5;
+
+  --color-title: #fff;
+  --color-subtitle: #42d3ff;
+
+  --color-background-form: #fafafc;
+  --color-bottom-form: #d6d6d6;
+
+  --color-form-title: #32264d;
+  --color-form-legend: #4e4958;
+  --color-form-legend-description: #c1bccc;
+
+  --color-form-imput-border: #c1bccc;
+
+  --color-button-form: #04d361;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
