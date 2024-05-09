@@ -12,6 +12,8 @@
   --color-form-legend: #4e4958;
   --color-form-legend-description: #c1bccc;
 
+  --color-form-line: #e6e6f0;
+
   --color-form-imput-border: #c1bccc;
 
   --color-button-form: #04d361;
@@ -20,4 +22,99 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background-bottom);
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 368px;
+  background: var(--color-background-top);
+
+  /*
+     Todos os elementos criados pela pseudo ::before e ::after, precisam ser iniciados as outras propriedades 
+   */
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+#page {
+  width: 736px;
+  margin: auto;
+}
+
+header {
+  width: 319px;
+}
+
+header h1 {
+  font-family: "Archivo", sans-serif;
+  font-size: bold;
+  line-height: 42px;
+  padding-top: 74px;
+  color: var(--color-title);
+}
+
+header p {
+  color: var(--color-subtitle);
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 26px;
+  padding-top: 24px;
+}
+
+form {
+  background-color: var(--color-background-form);
+  min-height: 300px;
+  margin-top: 38px;
+  border-radius: 8px 8px 0px 0px;
+  padding: 64px;
+}
+
+form fieldset {
+  border: none;
+}
+
+form fieldset legend {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+
+  width: 100%;
+  border-bottom: 1px solid var(--color-form-line);
+  padding-bottom: 16px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 8px;
+
+  color: var(--color-form-legend);
+}
+
+.input-wrapper label span {
+  margin-right: 12px;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: var(--color-form-legend-description);
+}
+
+.input-wrapper input {
+  background-color: var(--color-background-form);
+  border: 1px solid var(--color-form-line);
+  border-radius: 8px;
 }
