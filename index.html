@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="./assets/form.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -61,13 +62,48 @@
         <fieldset>
           <div class="fieldset-wrapper">
             <legend>Privacidade</legend>
+            <!-- e-mail -->
+            <div class="input-wrapper">
+              <label for="event-email">E-mail do administrador <span>(digite um email válido)</span></label>
+                <input type="email" id="event-email" />
+            </div>
+            <!-- Password -->
+            <div class="input-wrapper">
+              <label for="event-pass">Senha de acesso para os participantes <span>(mínimo 8 caracteres)</span></label>
+                <input type="password" id="event-pass" />
+            </div>
           </div>
         </fieldset>
+ 
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Dia e Hora</legend>
 
+            <div id="data-evento">
+              <!-- Dia -->
+              <div class="input-wrapper">
+                <label for="event-day">Data</label>
+                  <input type="date" id="event-day" />
+              </div>
+              <!-- Hora das -->
+              <div class="input-wrapper">
+                <label for="event-hour-begin">Das</label>
+                  <input type="time" id="event-hour-begin" />
+              </div>
+              <!-- Hora ate -->
+              <div class="input-wrapper">
+                <label for="event-hour-end">Até</label>
+                  <input type="time" id="event-hour-end" />
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+ 
       </form>
     </div>
 
-    <p style="display: block; width: 40%; margin: 20px auto; border-radius: 6px; text-align: center; padding: 20px 40px; background-color: #f2f2f2;">Próximo item: <strong>Aplicando estilos aos agrupamentos restantes</p>
+    <p style="display: block; width: 50%; margin: 40px auto 43px; border-radius: 6px; box-shadow: 0px 3px rgba(39, 68, 114, 0.7); text-align: center; padding: 20px 40px; background-color: #f2f2f2;">Próximo item: <strong>Checkbox customizado e com acessibilidade.</p>
 
 </strong>
   </body>
