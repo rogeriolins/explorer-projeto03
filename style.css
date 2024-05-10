@@ -11,10 +11,12 @@
   --color-form-title: #32264d;
   --color-form-legend: #4e4958;
   --color-form-legend-description: #c1bccc;
+  --color-form-legend-description-hover: #6c6a71;
+  --color-form-font: #6c6a71;
 
   --color-form-line: #e6e6f0;
 
-  --color-form-imput-border: #c1bccc;
+  --color-form-input-border: #c1bccc;
 
   --color-button-form: #04d361;
 }
@@ -25,9 +27,16 @@
   box-sizing: border-box;
 }
 
-body {
+input,
+button,
+select,
+textarea {
   font-family: "Poppins", sans-serif;
+}
+
+body {
   background-color: var(--color-background-bottom);
+  font-family: "Poppins", sans-serif;
 }
 
 body::before {
@@ -75,10 +84,21 @@ form {
   margin-top: 38px;
   border-radius: 8px 8px 0px 0px;
   padding: 64px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 form fieldset {
   border: none;
+}
+
+.fieldset-wrapper {
+  /* Em componente legend após o fieldset as propriedades não são aplicadas, então é necessário uma classe para ajuste */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 form fieldset legend {
@@ -106,15 +126,51 @@ form fieldset legend {
 }
 
 .input-wrapper label span {
-  margin-right: 12px;
+  margin-left: 12px;
   font-size: 12px;
   line-height: 20px;
 
   color: var(--color-form-legend-description);
 }
 
-.input-wrapper input {
+.input-wrapper label span:hover {
+  color: var(--color-form-legend-description-hover);
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
   background-color: var(--color-background-form);
   border: 1px solid var(--color-form-line);
   border-radius: 8px;
+
+  height: 56px;
+  padding: 24px;
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: var(--color-form-font);
+}
+
+.input-wrapper textarea {
+  padding: 0;
+  height: 168px;
+}
+
+.input-wrapper select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  /* 
+    Para converter imagens svg e usar como texto usar um conversro de 
+    base64 como yonk
+
+    https://yoksel.github.io/url-encoder/ 
+
+  */
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
 }

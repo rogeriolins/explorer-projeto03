@@ -23,18 +23,52 @@
       </header>
       <form>
         <fieldset>
-          <legend>Informações do Evento</legend>
+          <div class="fieldset-wrapper">
+            <legend>Informações do Evento</legend>
+            <div class="input-wrapper">
+              <label for="event-title">Título do evento <span>(Mínimo 8 caracteres)</span></label>
+              <input type="text" id="event-title" />
+            </div>
+  
+            <div class="input-wrapper">
+              <label for="event-link">link do evento <span>(comece com https://)</span></label>
+              <input type="url" id="event-link" />
+            </div>
+  
+            <div class="input-wrapper">
+              <label for="event-whatsapp-contact">Whatsapp para contato <span>(somente números)</span></label>
+              <input type="number" id="event-whatsapp-contact" />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="event-info-extras">Informações extras</label>
+              <textarea id="event-info-extras" cols="30" rows="10"></textarea>
+            </div>
+
+            <!-- Detalhe no css da imagem no select -->
+            <div class="input-wrapper">
+              <label for="event-category">Categoria</label>
+              <select id="event-category">
+                <option value="live">Ao Vivo</option>
+                <option value="podecast">Podcast</option>
+                <option value="mentorship">Mentoria</option>
+              </select>
+            </div>
+
+          </div>
         </fieldset>
 
-        <div class="input-wrapper">
-          <label for="event-title"
-            >Título do evento <span>(Mínimo 8 caracteres)</span>
-            <input type="text" id="event-title" />
-          </label>
-        </div>
+        <fieldset>
+          <div class="fieldset-wrapper">
+            <legend>Privacidade</legend>
+          </div>
+        </fieldset>
+
       </form>
     </div>
-    <p>Proximo item: <strong>Formatando o campo de texto</p>
+
+    <p style="display: block; width: 40%; margin: 20px auto; border-radius: 6px; text-align: center; padding: 20px 40px; background-color: #f2f2f2;">Próximo item: <strong>Aplicando estilos aos agrupamentos restantes</p>
+
 </strong>
   </body>
 </html>
