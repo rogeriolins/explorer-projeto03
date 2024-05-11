@@ -1,4 +1,7 @@
 :root {
+  --color-black: #000;
+  --color-white: #fff;
+
   --color-background-top: #121214;
   --color-background-bottom: #e5e5e5;
 
@@ -13,12 +16,14 @@
   --color-form-legend-description: #c1bccc;
   --color-form-legend-description-hover: #6c6a71;
   --color-form-font: #6c6a71;
+  --color-form-background-button: #f0f0f4;
 
   --color-form-line: #e6e6f0;
 
   --color-form-input-border: #c1bccc;
 
   --color-button-form: #04d361;
+  --color-button-form-hover: #08a04c;
 }
 
 * {
@@ -28,7 +33,6 @@
 }
 
 input,
-button,
 select,
 textarea {
   font-family: "Poppins", sans-serif;
@@ -117,7 +121,8 @@ form fieldset legend {
   flex-direction: column;
 }
 
-.input-wrapper label {
+.input-wrapper label,
+.checkbox-wrapper label {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 8px;
@@ -186,4 +191,78 @@ form fieldset legend {
 
 #data-evento > :nth-child(1) {
   width: 312px;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  gap: 16px;
+}
+
+.checkbox-wrapper input {
+  /* display: none; */
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox-wrapper label::before {
+  /* display: block; */
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-form-line);
+  border-radius: 8px;
+}
+
+/* Coloca  a imagem baseado no Base64 Encode */
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Coloca a borda de outline quando estiver selecionado pra resolver a acessibilidade */
+.checkbox-wrapper input:focus + label::before {
+  outline: 2px solid var(--color-black);
+}
+
+footer {
+  background: var(--color-form-background-button);
+
+  height: 136px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 40px 64px;
+
+  margin-bottom: 100px;
+  border-top: 1px solid var(--color-bottom-form);
+  border-radius: 0px 0px 8px 8px;
+}
+
+.button-submit {
+  height: 56px;
+
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-white);
+
+  background-color: var(--color-button-form);
+  border: 0px;
+  border-radius: 8px;
+}
+
+.button-submit:hover {
+  background-color: var(--color-button-form-hover);
 }
