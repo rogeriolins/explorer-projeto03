@@ -22,13 +22,13 @@
         <h1>Crie e compartilhe seu evento.</h1>
         <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
       </header>
-      <form>
+      <form id="my-first-form">
         <fieldset>
           <div class="fieldset-wrapper">
             <legend>Informações do Evento</legend>
             <div class="input-wrapper">
               <label for="event-title">Título do evento <span>(Mínimo 8 caracteres)</span></label>
-              <input type="text" id="event-title" />
+              <input type="text" id="event-title" minlength="8" required />
             </div>
   
             <div class="input-wrapper">
@@ -70,7 +70,7 @@
             <!-- Password -->
             <div class="input-wrapper">
               <label for="event-pass">Senha de acesso para os participantes <span>(mínimo 8 caracteres)</span></label>
-                <input type="password" id="event-pass" />
+                <input type="password" id="event-pass" minlength="8" required />
             </div>
             <!-- Checkbox Private -->
             <div class="checkbox-wrapper">
@@ -88,12 +88,12 @@
               <!-- Dia -->
               <div class="input-wrapper">
                 <label for="event-day">Data</label>
-                  <input type="date" id="event-day" />
+                  <input type="date" id="event-day" required />
               </div>
               <!-- Hora das -->
               <div class="input-wrapper">
                 <label for="event-hour-begin">Das</label>
-                  <input type="time" id="event-hour-begin" />
+                  <input type="time" id="event-hour-begin" required />
               </div>
               <!-- Hora ate -->
               <div class="input-wrapper">
@@ -108,7 +108,14 @@
       </form>
 
       <footer>
-        <input class="button-submit" type="submit" value="Salvar evento">
+        <!-- <input 
+        class="button-submit"
+        type="submit"
+        form="my-first-form"
+        value="Salvar evento" /> -->
+        <button 
+          class="button-submit"
+          form="my-first-form">Salvar evento</button>
       </footer>
 
     </div>

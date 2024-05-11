@@ -21,6 +21,7 @@
   --color-form-line: #e6e6f0;
 
   --color-form-input-border: #c1bccc;
+  --color-form-validation: rgb(163, 25, 25);
 
   --color-button-form: #04d361;
   --color-button-form-hover: #08a04c;
@@ -265,4 +266,9 @@ footer {
 
 .button-submit:hover {
   background-color: var(--color-button-form-hover);
+}
+
+/* Validações */
+input:invalid {
+  border: 1px solid var(--color-form-validation);
 }
